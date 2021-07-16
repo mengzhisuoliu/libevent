@@ -271,9 +271,6 @@
 /* Define to 1 if you have the `strsignal' function. */
 #cmakedefine EVENT__HAVE_STRSIGNAL 1
 
-/* Define to 1 if you have the `splice' function. */
-#cmakedefine EVENT__HAVE_SPLICE 1
-
 /* Define to 1 if you have the <stdarg.h> header file. */
 #cmakedefine EVENT__HAVE_STDARG_H 1
 
@@ -449,9 +446,6 @@
 /* Define to 1 if you have the `unsetenv' function. */
 #cmakedefine EVENT__HAVE_UNSETENV 1
 
-/* Define to 1 if you have the `vasprintf' function. */
-#cmakedefine EVENT__HAVE_VASPRINTF 1
-
 /* Define if kqueue works correctly with pipes */
 #cmakedefine EVENT__HAVE_WORKING_KQUEUE 1
 
@@ -484,9 +478,6 @@
 
 /* The size of `size_t', as computed by sizeof. */
 #define EVENT__SIZEOF_SIZE_T @EVENT__SIZEOF_SIZE_T@
-
-/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
-#cmakedefine EVENT__TIME_WITH_SYS_TIME 1
 
 /* The size of `socklen_t', as computed by sizeof. */
 #define EVENT__SIZEOF_SOCKLEN_T @EVENT__SIZEOF_SOCKLEN_T@

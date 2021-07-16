@@ -1,7 +1,10 @@
 dnl ######################################################################
 dnl OpenSSL support
 AC_DEFUN([LIBEVENT_OPENSSL], [
-AC_REQUIRE([NTP_PKG_CONFIG])dnl
+
+m4_ifndef([PKG_PROG_PKG_CONFIG], [AC_MSG_ERROR([PKG_PROG_PKG_CONFIG not found. Please install pkg-config and re-run autogen.sh])])
+
+PKG_PROG_PKG_CONFIG([0.15.0])
 
 case "$host_os" in
     darwin*)

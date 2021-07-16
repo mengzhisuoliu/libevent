@@ -37,10 +37,6 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_LOWER)
 
-# get rid of the extra default configurations
-# what? why would you get id of other useful build types? - Ellzey
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Limited configurations" FORCE)
-
 set(EVENT__LIBRARY_TYPE DEFAULT CACHE STRING
     "Set library type to SHARED/STATIC/BOTH (default SHARED for MSVC, otherwise BOTH)")
 
@@ -470,11 +466,9 @@ list(APPEND SYMBOLS_TO_CHECK
     gettimeofday
     signal
     strtoll
-    splice
     strlcpy
     strsep
     strtok_r
-    vasprintf
     timerclear
     timercmp
     timerisset
@@ -552,7 +546,6 @@ if (NOT EVENT__DISABLE_THREAD_SUPPORT)
     endif()
 endif()
 
-# Add stdio.h for vasprintf
 list(APPEND CMAKE_EXTRA_INCLUDE_FILES ${EVENT_INCLUDES} stdio.h)
 CHECK_SYMBOLS_EXIST("${SYMBOLS_TO_CHECK}" "${CMAKE_EXTRA_INCLUDE_FILES}" "EVENT")
 unset(SYMBOLS_TO_CHECK)
